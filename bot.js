@@ -267,7 +267,7 @@ client.on('message', message => {
 const dot = new Discord.Client();
 client.on('message', message => {
     
-    if (message.content === "=emoji") {
+    if (message.content === "=ايموجي") {
         setInterval(function(){
         message.edit('😂') 
         message.edit('🙉')   
