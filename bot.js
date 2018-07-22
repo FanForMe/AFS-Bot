@@ -61,7 +61,7 @@ const den = [
 'من الذي قبل أمير المؤمنين رأسه وقال : حقاً على المؤمنين أن يقبلوا رأسه ؟ ',
 ]
 client.on('message', message => {
-    if (message.content.startsWith('~دين')) {
+    if (message.content.startsWith('=دين')) {
         if (!message.channel.guild) return message.reply('** هاذا الأمر فقط للسيرفرات **');
         var client = new Discord.RichEmbed()
             .setTitle("اسالة دينية ..")
