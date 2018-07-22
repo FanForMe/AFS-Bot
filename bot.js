@@ -67,7 +67,7 @@ client.on('message', message => {
             .setTitle("اسالة دينية ..")
             .setColor('RANDOM')
             .setDescription(`${den[Math.floor(Math.random() *den.length)]}`)
-            .setImage("https://cdn.discordapp.com/attachments/439827614044258306/441487283888324609/unknown.png")
+            .setImage("C:\Users\iTzSlemanPS\Desktop\music\download.jpg")
             .setTimestamp()
 
         message.channel.sendEmbed(client);
