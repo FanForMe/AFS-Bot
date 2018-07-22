@@ -254,7 +254,7 @@ const hkm = [
 });
 
 
-const N9e7h = ([
+const N9e7h = [
 
 'أعظم مصائب الجهل أن يجهل الجاهل جهله',
 'الفضيلة والثروة ثقلان في كفتي ميزان لا يمكن أن يرتفع أحدهما دون أن ينخفض الآخر.' ,
@@ -303,9 +303,9 @@ const N9e7h = ([
 ' الصداقة كالمظلة كلما إشتد المطر كلما إزدادت الحاجة لها. ',
 'كل شيء إذا كثر رخص إلّا الأدب فإنه إذا كثر غلا. ',
 'كل شيء يبدأ صغيراً ثم يكبر إلا المصيبة فإنها تبدأ كبيرة ثم تصغر .',
-])
+]
 client.on('message', message => {
-    if (message.content.startsWith('=نصيحة')) {
+    if (message.content.startsWith(prefix '=نصيحة')) {
         if (!message.channel.guild) return message.reply('** هاذا الأمر فقط للسيرفرات **');
         var client = new Discord.RichEmbed()
             .setTitle("نصائح ..")
