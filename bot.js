@@ -42,7 +42,7 @@ client.on('message', async msg => {
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 	
-	if (command === `play`) {
+	if (command === `=play`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('You should be in a voice channel');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
@@ -77,7 +77,7 @@ client.on('message', async msg => {
 					let index = 0;
 					const embed1 = new Discord.RichEmbed()
 			        .setDescription(`**Choose a number** :
-${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
+${videos.map(video2 => `[**${++index} **] \`${video2.title}\``)=join('\n')}`)
 
 					.setFooter("Brix")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
@@ -103,19 +103,19 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
 			return handleVideo(video, msg, voiceChannel);
 		}
-	} else if (command === `skip`) {
+	} else if (command === `=skip`) {
 		if (!msg.member.voiceChannel) return msg.channel.send('you are not in a voice channel');
 		if (!serverQueue) return msg.channel.send('there is no thing to skip');
 		serverQueue.connection.dispatcher.end('skepped');
 		return undefined;
-	} else if (command === `stop`) {
+	} else if (command === `=stop`) {
 		
 		if (!msg.member.voiceChannel) return msg.channel.send('you are not in a voice channel');
 		if (!serverQueue) return msg.channel.send('there is no thing to stop');
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end('stopped');
 		return undefined;
-	} else if (command === `vol`) {
+	} else if (command === `=vol`) {
 		if (!msg.member.voiceChannel) return msg.channel.send('you are not in a voice channel');
 		if (!serverQueue) return msg.channel.send('there is no thing playing');
 		if (!args[1]) return msg.channel.send(`:loud_sound: volume **${serverQueue.volume}**`);
@@ -139,14 +139,14 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 **now playing** ${serverQueue.songs[0].title}`)
 		return msg.channel.sendEmbed(embedqu);
-	} else if (command === `pause`) {
+	} else if (command === `=pause`) {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
 			return msg.channel.send('paused');
 		}
 		return msg.channel.send('there is no thing playing');
-	} else if (command === "resume") {
+	} else if (command === "=resume") {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
@@ -158,7 +158,7 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 	return undefined;
 });
 
-async function handleVideo(video, msg, voiceChannel, playlist = false) {
+async function handleVideo(video, msg, voiceChannel, playlist = true) {
 	const serverQueue = queue.get(msg.guild.id);
 	console.log(video);
 //	console.log('yao: ' + Util.escapeMarkdown(video.thumbnailUrl));
@@ -221,7 +221,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`start playing : **${song.title}**`);
 }
 
-const adminprefix = "$vip";
+const adminprefix = "=vip";
 const devs = ['274923685985386496'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -248,18 +248,18 @@ if (message.content.startsWith(adminprefix + 'setT')) {
 });
 
 client.on("message", message => {
- if (message.content === `${prefix}`) {
+ if (message.content === `=help`) {
   const embed = new Discord.RichEmbed()
       .setColor("#000000")
       .setDescription(`
-${prefix}play ⇏ لتشغيل أغنية برابط أو بأسم
-${prefix}skip ⇏ لتجاوز الأغنية الحالية
-${prefix}pause ⇏ ايقاف الأغنية مؤقتا
-${prefix}resume ⇏ لمواصلة الإغنية بعد ايقافها مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حاليا
-${prefix}queue ⇏ لمعرفة قائمة التشغيل
+={prefix}play ⇏ لتشغيل أغنية برابط أو بأسم
+={prefix}skip ⇏ لتجاوز الأغنية الحالية
+={prefix}pause ⇏ ايقاف الأغنية مؤقتا
+={prefix}resume ⇏ لمواصلة الإغنية بعد ايقافها مؤقتا
+={prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
+={prefix}stop ⇏ لإخرآج البوت من الروم
+={prefix}np ⇏ لمعرفة الأغنية المشغلة حاليا
+={prefix}queue ⇏ لمعرفة قائمة التشغيل
 
  `)
    message.channel.sendEmbed(embed)
