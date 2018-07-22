@@ -340,6 +340,20 @@ client.on('message', message => {
     }
 });
 
-
+client.on('message', message => {
+            if (message.content.startsWith(prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **خواطر=** ' ,' **يعطيك كلام موزون وحلو** ')
+.addField('     **صراحة=**  ' ,' **يعطيك سؤال لازم تجاوب عليه بصراحة** ')
+.addField('     **حكم=** ' , '**يعطيك حكم لازم تسوي اذا ما جاوبت على سؤال حق صراحة**') 
+.addField('     **نصيحة=** ' , '**يعطيك نصيحة ممكن تفيدك**') 
+.addField('     **مريم=** ' ,' ** نفس لعبة مريم الي على الجوال بس عل بوت**')
+.addField('     **كت تويت=** ' , '**يعطيك سؤال عن نفسك لكن مباجباري الاجابة**')
+.addField('     **هل تعلم= ** ' ,' **  يعطيك معلومات ممكن ما تعرفها  ** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
 
 client.login(process.env.BOT_TOKEN);
