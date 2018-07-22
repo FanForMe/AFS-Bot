@@ -67,7 +67,7 @@ client.on('message', message => {
             .setTitle("اسالة دينية ..")
             .setColor('RANDOM')
             .setDescription(`${den[Math.floor(Math.random() *den.length)]}`)
-            .setImage("https://www.google.co.il/search?biw=1366&bih=662&tbm=isch&sa=1&ei=tllUW4TaMKek6ASNqLGgCA&q=%D8%AF%D9%8A%D9%86&oq=%D8%AF%D9%8A%D9%86&gs_l=img.3..35i39k1j0j0i67k1l2j0j0i67k1j0l4.3839.4907.0.5252.4.4.0.0.0.0.164.569.0j4.4.0....0...1c.1.64.img..0.4.567...0i8i30k1.0.7gpKvmYbw4E#imgrc=NW6C6A5_Z8LfOM:")
+            .setImage("https://cdn.discordapp.com/attachments/470246534768754698/470536428007325706/c85fabc73f49ac7f.png")
             .setTimestamp()
 
         message.channel.sendEmbed(client);
