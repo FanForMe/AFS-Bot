@@ -24,4 +24,29 @@ client.on('message', message => {
 });
 
 
+client.on('message', message => {
+       
+    if(message.content == prefix + "=فكك") {
+        var ask = fkk[Math.floor(Math.random() * fkk.length)];
+message.channel.send(`${ask.f}`)
+.then(() => {
+  message.channel.awaitMessages(response => response.content === `${ask.k}`, {
+    max: 1,
+    time: 20000,
+    errors: ['time'],
+  })
+  .then((collected) => {
+      
+message.channel.send(`لقد قمت بكتابة الإجابة الصحيحة خلال الفتره المحددة (:`)
+  })
+    .catch(() => {
+      message.channel.send('****');
+    })
+})
+
+    }
+   });
+
+
+
 client.login(process.env.BOT_TOKEN); 
