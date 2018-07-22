@@ -67,13 +67,14 @@ client.on('message', message => {
             .setTitle("اسالة دينية ..")
             .setColor('RANDOM')
             .setDescription(`${den[Math.floor(Math.random() *den.length)]}`)
-            .setImage("https://cdn.discordapp.com/attachments/470246534768754698/470536428007325706/c85fabc73f49ac7f.png")
+            .setImage("https://cdn.discordapp.com/attachments/439827614044258306/441487283888324609/unknown.png")
             .setTimestamp()
 
         message.channel.sendEmbed(client);
         message.react("??")
     }
 });
+
 
 
 client.login(process.env.BOT_TOKEN);
