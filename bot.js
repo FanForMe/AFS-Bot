@@ -266,7 +266,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-            if (message.content.startsWith("help")) {
+            if (message.content.startsWith("=help")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
 .addField('     **حكم** ' ,' **تحكم عليك بفعل ويجب عليك القيام به** ')
