@@ -158,7 +158,7 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 	return undefined;
 });
 
-async function handleVideo(video, msg, voiceChannel, playlist = true) {
+async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	const serverQueue = queue.get(msg.guild.id);
 	console.log(video);
 //	console.log('yao: ' + Util.escapeMarkdown(video.thumbnailUrl));
