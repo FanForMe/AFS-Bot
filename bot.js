@@ -67,7 +67,7 @@ client.on('message', message => {
             .setTitle("اسالة دينية ..")
             .setColor('RANDOM')
             .setDescription(`${den[Math.floor(Math.random() *den.length)]}`)
-            .setImage("C:\Users\iTzSlemanPS\Desktop\music\download.jpg")
+            .setImage("")
             .setTimestamp()
 
         message.channel.sendEmbed(client);
