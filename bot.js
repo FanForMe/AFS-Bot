@@ -264,58 +264,22 @@ client.on('message', message => {
 });
 
 
-const dot = new Discord.Client();
+
 client.on('message', message => {
-    
-    if (message.content === "=ايموجي") {
-        setInterval(function(){
-        message.edit('😂') 
-        message.edit('🙉')   
-        message.edit('🔥')
-        message.edit('😠')
-        message.edit('🔥 🌶')
-        message.edit('🙃')
-        message.edit('☠')
-        message.edit('✨')
-        message.edit('😐')
-        message.edit('😍')
-        message.edit('❤')
-        message.edit('👌:skin-tone-2:')
-        message.edit('🌚')
-        message.edit('🌹')
-        message.edit('😒')
-        message.edit('🐸')
-        message.edit('🍉')
-        message.edit('🚨')
-        message.edit('😱')
-        message.edit('😡')        
-        message.edit('🤑')
-        message.edit('😖')
-        message.edit('😚')
-        message.edit('🕊')
-        message.edit('☄')
-           message.edit('🐶')
-        message.edit('🚜')    
-        message.edit('🍫')
-        message.edit('👇:skin-tone-2:')
-        message.edit('🕹')
-        message.edit('🌌 ')
-        message.edit('💋 ')
-           message.edit('🤸')
-        message.edit('🙍:skin-tone-2:')    
-        message.edit('😦')
-        message.edit('👈:skin-tone-2:')
-        message.edit('💓')
-        message.edit('☺')
-        message.edit('💗')
-        message.edit('🌸')
-
-
-        
-        
-        }, 1000)
+            if (message.content.startsWith("help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **حكم** ' ,' **تحكم عليك بفعل ويجب عليك القيام به** ')
+.addField('     **خواطر**  ' ,' **كلام موزون ووجميل ومفيد** ')
+.addField('     **صراحة** ' , '**يعطيك سؤال ويجب عليك الاجابة بصراحة**') 
+.addField('     **كت تويت** ' , '**هذي لعبة الكت تويت**')
+.addField('     **soon ** ' ,' **  soon ** ')
+.addField('     **soon ** ' ,' **  soon  ** ')
+.addField('     **ملاحظة هامة !! ** ' ,' **  يجب عليك كتابته= قبل كل كلمة لكي يستجيب البوت لامرك  ** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
     }
-  });
+});
 
 
 client.login(process.env.BOT_TOKEN);
