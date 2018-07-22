@@ -66,7 +66,6 @@ client.on('message', message => {
         var client = new Discord.RichEmbed()
             .setTitle("اسالة دينية ..")
             .setColor('RANDOM')
-            .setDescription(`${den[Math.floor(Math.random() *den.length)]}`)
             .setImage("")
             .setTimestamp()
 
