@@ -6,6 +6,13 @@ client.on('ready', () => {
 });
 
 
+
+// playing
+client.on('ready', () => { =help                           
+client.user.setGame(``,'https://www.twitch.tv/tarikrs');                                                                                                                                                                                                                                                                                                                                                                                                                             client.user.setGame(`-help | On 20 Servers`,'https://www.twitch.tv/v5bz');
+});          
+
+
 const hkm = [
    '*** منشن الجميع وقل انا اكرهكم. ***',
 '*** اتصل على امك و قول لها انك تحبها :heart:. ***',
