@@ -58,7 +58,7 @@ const N9e7h = [
 'كل شيء يبدأ صغيراً ثم يكبر إلا المصيبة فإنها تبدأ كبيرة ثم تصغر .',
 ]
 client.on('message', message => {
-    if (message.content.startsWith("=نصيحة")) {
+    if (message.content.startsWith('=نصيحة')) {
         if (!message.channel.guild) return message.reply('** هاذا الأمر فقط للسيرفرات **');
         var client = new Discord.RichEmbed()
             .setTitle("نصائح ..")
