@@ -23,7 +23,7 @@ client.on('message', message => {
    }
 });
 
-const den = 
+const den = [
 'على من يطلق المصدود ؟',
 'من النبي الذي كان يسمى بشرى',
 'من ادخل الخوارزمي في الإسلام ؟',
@@ -59,7 +59,7 @@ const den =
 'من سمى الجمعة الجمعة ؟ ',
 ' متى كانت غزوة خيبر ؟ ',
 'من الذي قبل أمير المؤمنين رأسه وقال : حقاً على المؤمنين أن يقبلوا رأسه ؟ ',
-
+]
 client.on('message', message => {
     if (message.content.startsWith('~دين')) {
         if (!message.channel.guild) return message.reply('** هاذا الأمر فقط للسيرفرات **');
