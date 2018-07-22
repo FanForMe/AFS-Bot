@@ -73,13 +73,13 @@ client.on('message', message => {
 'كل شيء يبدأ صغيراً ثم يكبر إلا المصيبة فإنها تبدأ كبيرة ثم تصغر .',
 ]
 client.on('message', message => {
-    if (message.content.startsWith('~نصيحة')) {
+    if (message.content.startsWith('=نصيحة')) {
         if (!message.channel.guild) return message.reply('** هاذا الأمر فقط للسيرفرات **');
         var client = new Discord.RichEmbed()
             .setTitle("نصائح ..")
             .setColor('RANDOM')
             .setDescription(`${N9e7h[Math.floor(Math.random() * N9e7h.length)]}`)
-            .setImage("https://media.discordapp.net/attachments/439827614044258306/441485921964130304/unknown.png")
+            .setImage("C:\Users\iTzSlemanPS\Desktop\music\نصيحة.jpg")
             .setTimestamp()
 
         message.channel.sendEmbed(client);
