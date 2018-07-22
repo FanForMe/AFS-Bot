@@ -26,14 +26,8 @@ npm install simple-youtube-api
 npm install queue
 */
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`in ${client.guilds.size} servers `)
-    console.log(`[Codes] ${client.users.size}`)
-    client.user.setStatus("online")
-});
 
-const prefix = "1"
+
 client.on('message', async msg => { 
 	
 	if (msg.author.bot) return undefined;
@@ -273,7 +267,6 @@ ${prefix}queue ⇏ لمعرفة قائمة التشغيل
    }
    }); 
    
-	client.login("توكن بوتك");
 
 
 client.login(process.env.BOT_TOKEN); 
