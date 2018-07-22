@@ -7,41 +7,63 @@ client.on('ready', () => {
 
 
 
+const cuttweet = [
+  'كت تويت ‏| تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، م��ذا سترسم؟',
+  'كت تويت | أكثر شيء يُسكِت الطفل برأيك؟',
+  'كت تويت | الحرية لـ ... ؟',
+  'كت تويت | قناة الكرتون المفضلة في طفولتك؟',
+  'كت تويت ‏| كلمة للصُداع؟',
+  'كت تويت ‏| ما الشيء الذي يُفارقك؟',
+  'كت تويت | موقف مميز فعلته مع شخص ولا يزال يذكره لك؟',
+  'كت تويت ‏| أيهما ينتصر، الكبرياء أم الحب؟',
+  'كت تويت | بعد ١٠ سنين ايش بتكون ؟',
+  'كت تويت ‏| مِن أغرب وأجمل الأسماء التي مرت عليك؟',
+  '‏كت تويت | عمرك شلت مصيبة عن شخص برغبتك ؟',
+  'كت تويت | أكثر سؤال وجِّه إليك مؤخرًا؟',
+  '‏كت تويت | ما هو الشيء الذي يجعلك تشعر بالخوف؟',
+  '‏كت تويت | وش يفسد الصداقة؟',
+  '‏كت تويت | شخص لاترفض له طلبا ؟',
+  '‏كت تويت | كم مره خسرت شخص تحبه؟.',
+  '‏كت تويت | كيف تتعامل مع الاشخاص السلبيين ؟',
+  '‏كت تويت | كلمة تشعر بالخجل اذا قيلت لك؟',
+  '‏كت تويت | جسمك اكبر من عٌمرك او العكسّ ؟!',
+  '‏كت تويت |أقوى كذبة مشت عليك ؟',
+  '‏كت تويت | تتأثر بدموع شخص يبكي قدامك قبل تعرف السبب ؟',
+  'كت تويت | هل حدث وضحيت من أجل شخصٍ أحببت؟',
+  '‏كت تويت | أكثر تطبيق تستخدمه مؤخرًا؟',
+  '‏كت تويت | ‏اكثر شي يرضيك اذا زعلت بدون تفكير ؟',
+  '‏كت تويت | وش محتاج عشان تكون مبسوط ؟',
+  '‏كت تويت | مطلبك الوحيد الحين ؟',
+  '‏كت تويت | هل حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
+]
+
 client.on('message', message => {
-if (!points[message.author.id]) points[message.author.id] = {
-    points: 50,
-  };
-if (message.content.startsWith(prefix + '=عواصم')) { 
-    if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
-
-const type = require('./3wasem/3wasem.json'); 
-const item = type[Math.floor(Math.random() * type.length)]; 
-const filter = response => { 
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-};
-message.channel.send('**اديك 15 ثاني�� لتوجد العاصمه الصحيحه**').then(msg => {
-    let embed = new Discord.RichEmbed()
-    .setColor('#000000')
-    .setFooter("عواصم  | NoobBot", 'https://cdn.discordapp.com/avatars/439427357175185408/3eb163b7656922ebc9e90653d50231f1.png?size=2048')
-    .setDescription(`**اكتب عاصمه: ${item.type}**`)
-
-    msg.channel.sendEmbed(embed).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
-        .then((collected) => {
-        message.channel.send(`${collected.first().author} ✅ **الاجابه صحيحه**`); //mohamed192837465#7033صاحب الكود
-
-        console.log(`[Typing] ${collected.first().author} typed the word.`);
-            let won = collected.first().author; 
-            points[won.id].points++;
-          })
-          .catch(collected => { 
-            message.channel.send(`:x: **لا يوجد احد كتب الاجابه الصحيحه**`);
-            console.log(`[Typing] ماحد قال الاجابه `);
-          })
-        })
-    })
-}
+	var prefix = "$"
+if (message.content.startsWith(prefix + "=كت تويت")) {
+             if(!message.channel.guild) return message.reply('** This command only for servers**');
+var embed = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setThumbnail(message.author.avatarURL) 
+.addField('لعبه كت تويت' ,
+`${cuttweet[Math.floor(Math.random() * cuttweet.length)]}`)
+message.channel.sendEmbed(embed);
+console.log('[id] Send By: ' + message.author.username)
+ }
 });
+
+const secreT = [
+"**الحياة بكل ما فيها تقف دائمًا على حد الوسطية بين اتزان المعنى وضده من حب وكره وحق وباطل وعدل وظلم**.",
+"**كى تعيش عليك ان تتقن فن التجاهل باحتراف**.",
+"**لا تحزن على من اشعرك بان طيبتك غباء امام وقاحته**.",
+"**هناك من يحلم بالنجاح وهناك من يستيقظ باكرا لتحقيقه**.",
+"**ان تعالج ألمك بنفسك تلك هى القوة**.", 
+"**الجميع يسمع ما تقول والاصدقاء ينصتون لما تقول وافضل الاصدقاء ينصتون لما اخفاه سكوتك**.", 
+"**انتهى زمن الفروسية ، لم تنقرض الخيول بل انقرض الفرسان**.", 
+"**ان تكون اخرسا عاقلا خير من ان تكون نطوقا جهولا**.", 
+"**المناقشات العقيمة لا تنجب افكارا**.", 
+"**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
+"**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
+]
 
 
 
