@@ -364,7 +364,6 @@ client.on('message', message => {
        if(message.content.startsWith(prefix + '=لو خيروك')) {
 		   	var prefix = "$"
             var cat = new Discord.RichEmbed()
-   .setImage(7mod[7mod.floor(7mod.random() * 7mod.length)])
    message.channel.sendEmbed(cat);
        }
    });
