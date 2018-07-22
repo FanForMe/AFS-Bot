@@ -253,5 +253,15 @@ const hkm = [
   }
 });
 
+client.on('message', message => {
+            if (message.content.startsWith("=الجديد")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **ولا شيء** ' ,' *مانضاف شيء اليوم** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
+
 
 client.login(process.env.BOT_TOKEN);
