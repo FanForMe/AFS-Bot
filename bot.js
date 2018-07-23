@@ -377,9 +377,6 @@ client.on('message', message => {
 });
 
 
-
-
-
 client.on('message', message => {
             if (message.content.startsWith("=bot")) {
      let embed = new Discord.RichEmbed()
