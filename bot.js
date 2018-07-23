@@ -370,63 +370,7 @@ client.on('message', message => {
     }
 });
 
-
-
-
-
-const fs = require("fs");
-
-var prefix = ".";
-var aoasm =[
-    {q:"ما عاصمة **افغانستان**",a:"كبل"},
-
-    
-    
-    
-   ];
-   client.on("message", async message => {
-   if (message.content.startsWith(prefix + "=عواصم")) {
-
-        UserBlocked.add(message.guild.id)
-        var ask = aoasm[Math.floor(Math.random() * aoasm.length)];
-        let embed = new Discord.RichEmbed()
-        .setTitle('عاصمة')
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setColor("RANDOM")
-        .setDescription(ask.q);
-        message.channel.sendEmbed(embed).then(msg=> msg.delete(20000))
-        const msgs = await message.channel.awaitMessages(msg => msg.author.id !== client.user.id ,{maxMatches:1,time:10000});
-            UserBlocked.delete(message.guild.id)
-        msgs.forEach(result => {
-           if(result.author.id == client.user.id) return;
-           if(result.content == "عاصمة") return
-           if(result.content == ask.a){
-
-             let embeds = new Discord.RichEmbed()
-             .setTitle(':white_check_mark: اجابة صحيحة')
-             .setAuthor(message.author.username, message.author.avatarURL)
-             .setColor("RANDOM")
-             .setDescription(`**${result.author.username}** الإجابة صحيحة`);
-                message.channel.sendEmbed(embeds);                return;
-           } else {
-
-                                  var embedx = new Discord.RichEmbed()
-                .setTitle(':x:خطاء')
-                .setAuthor(message.author.username, message.author.avatarURL)
-                .setColor("RANDOM")
-                .setDescription(`**${result.author.username}** الإجابة خاطئة`);
-                message.channel.sendEmbed(embedx);
-           }
-     });
-  }
-});
-
-var prefix = ".";
-var fkk =[
-        {f:" بسم الله الرحمن الرحيم",k:"ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م"},
-
-   ];
-
+ 
 
 
 
