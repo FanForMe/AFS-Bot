@@ -385,7 +385,7 @@ var aoasm =[
     
    ];
    client.on("message", async message => {
-    if(message.content == prefix+"=عواصم"){
+   if (message.content.startsWith(prefix + "=عواصم")) {
 
         UserBlocked.add(message.guild.id)
         var ask = aoasm[Math.floor(Math.random() * aoasm.length)];
