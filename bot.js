@@ -354,7 +354,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-            if (message.content.startsWith(prefix + "help")) {
+            if (message.content.startsWith(prefix + "=help")) {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
 .addField('     **خواطر=** ' ,' **يعطيك كلام موزون وحلو** ')
