@@ -400,7 +400,7 @@ var cats = [
 ]
     client.on('message', message => {
         var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith("=cat")) {
+     if (message.content.startsWith("=قطط")) {
          var cat = new Discord.RichEmbed()
 .setImage(cats[Math.floor(Math.random() * cats.length)])
 message.channel.sendEmbed(cat);
