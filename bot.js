@@ -360,7 +360,6 @@ client.on('message', message => {
 
 
 const fs = require("fs")
-client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Users] ${client.users.size}`)
