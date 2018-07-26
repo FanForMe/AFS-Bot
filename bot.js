@@ -360,7 +360,7 @@ client.on('message', message => {
 
 
 let points = JSON.parse(fs.readFileSync('./3lm/3lmPTS.json', 'utf8'));
-var prefix = "=علم";
+var prefix = "=";
 client.on('message', message => {
 if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
