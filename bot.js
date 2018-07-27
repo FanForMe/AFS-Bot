@@ -406,17 +406,6 @@ const klmh = [
 
 
 
-client.on('message', message => {
-  if (!message.content.startsWith(prefix)) return;
-  const verifed = ["436535469392527380"];
-if (message.content.startsWith(prefix + '=ownerbot')) {
-    if(!message.channel.guild) return;
-if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage("**انت صاحب البوت **")
-} else {
-   message.reply("**انت مو صاحب البوت**");   
-}
-}
-});
 
 
 
@@ -424,7 +413,7 @@ if( verifed.some(word => message.author.id.includes(word)) ) {    return message
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "=help") {
+     if (message.content === prefix + "=مساعدة") {
 		 message.channel.send('**The Message Was Sent On Private**');
             
 	
@@ -460,17 +449,7 @@ client.on('message', message => {
 
 ❖ كلمة ➾ يعطيك شي انت لازم تعبر عنه او تعطي صفة ولكن لازم يكون كلمة وحدة فقط
 
-❖ bot ➾ help by arabic
-
-❖ *help-en ➾ help by english
-
-❖ *ping ➾ to see ping
-
 ❖ bot ➾ يعطيك معلومات ممكن ما تعرفهاعن البوت
-
-❖ ownerbot ➾ يعطيك اذا انت انر البوت او لا
-
-❖ *invite ➾ bot invite link
 
 ==================================================================
 
