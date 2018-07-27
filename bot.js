@@ -406,7 +406,19 @@ const klmh = [
 
 
 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '445272001293058049').setName("A");
+client.channels.find('id', '445272001293058049').setName("A7");
+client.channels.find('id', '445272001293058049').setName("A7M");
+client.channels.find('id', '445272001293058049').setName("A7MAD");
+client.channels.find('id', '445272001293058049').setName("A7MADX");
+client.channels.find('id', '445272001293058049').setName("A7MADXD");
+client.channels.find('id', '445272001293058049').setName("A7MADXD 6");
+client.channels.find('id', '445272001293058049').setName("A7MADXD 65");
 
+  }, 3000);
+});
 
 
 
