@@ -390,14 +390,13 @@ const klmh = [
  ]
 
  client.on('message', message => {
-   if (message.content.startsWith("=كلمة")) {
+   if (message.content.startsWith("=كلمه")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
-
    .setThumbnail(message.author.avatarURL)
  .addField('كلمة وحدة' ,
-  `${klmh[Math.floor(Math.random() * klmh.length)]}`)
+  `${klmh[Math.floor(Math.random() *klmh.length)]}`)
   message.channel.sendEmbed(embed);
   console.log('[id] Send By: ' + message.author.username)
     }
