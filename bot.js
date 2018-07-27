@@ -494,8 +494,6 @@ message.channel.send("``لا تستطيع سحب "+ message.mentions.members.fir
 } else {
  message.channel.send("**``يجب ان تكون في روم صوتي لكي تقوم بسحب العضو أليك``**")
 }
-} else {
-message.react("❌")
  }}});
 
 
