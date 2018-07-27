@@ -411,6 +411,9 @@ const klmh = [
 
 
 
+
+
+
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "$مساعدة") {
@@ -462,6 +465,17 @@ bot invite link: https://discordapp.com/oauth2/authorize?client_id=4691443178442
     }
 });
 
+
+
+
+client.on("message", (message) => {
+if (message.content.startsWith("=cv")) {
+        let args = message.content.split(" ").slice(1);
+    message.guild.createChannel(args.join(' '), 'voice');
+    message.channel.sendMessage('تـم إنـشاء روم صـوتي')
+    
+}
+});
 
 
 
