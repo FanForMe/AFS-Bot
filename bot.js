@@ -471,7 +471,7 @@ client.on('message', message => {
 if(!message.channel.guild) return;
 if(message.content.startsWith("=move")) {
  if (message.mentions.users.size === 0) {
- return message.channel.send("``لاستخدام الأمر اكتب هذه الأمر : " +prefix+ "=move [USER]``")
+ return message.channel.send("+prefix+ "=move [USER]")
 }
 if (message.member.voiceChannel != null) {
  if (message.mentions.members.first().voiceChannel != null) {
