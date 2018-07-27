@@ -390,7 +390,7 @@ const klmh = [
  ]
 
  client.on('message', message => {
-   if (message.content.startsWith("=كلمه")) {
+   if (message.content.startsWith("=كلمة")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -419,6 +419,7 @@ client.on('message', message => {
 .addField('     **كت تويت=** ' , '**يعطيك سؤال عن نفسك لكن مباجباري الاجابة**')
 .addField('     **هل تعلم= ** ' ,' **  يعطيك معلومات ممكن ما تعرفها  ** ')
 .addField('     **لو خيروك=** ' , '**يعطيك صورة فيها خيارين اختار واحد من الاختيارات**')
+.addField('     **كلمة=** ' , '**يعطيك شي انت لازم تعبر عنه او تعطي صفة ولكن لازم يكون كلمة وحدة فقط**')
 .addField('     **bot= ** ' ,' **   يعطيك معلومات ممكن ما تعرفهاعن البوت** ')
 .setColor('#7d2dbe')
   message.channel.sendEmbed(embed);
