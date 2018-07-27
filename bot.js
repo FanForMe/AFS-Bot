@@ -359,6 +359,54 @@ client.on('message', message => {
 
 
 
+
+const klmh = [
+ 
+ 'كلمة|صديق ايش يعنيلك.',
+ 'كلمة|امك وابوك.',
+ 'كلمة|اقاربك.',
+ 'كلمة|الناس الي تحب الرشوة.',
+ 'كلمة|السارقين.',
+ 'كلمة|دولتك.',
+ 'كلمة|امريكا.',
+ 'كلمة|الناس الي يقتلو بعضعلى اشياء تافهة.',
+ 'كلمة|الاكل :yum:.',
+ 'كلمة|الفواكه.',
+ 'كلمة|طبيخ امك.',
+ 'كلمة|طبيخ تيتا.',
+ 'كلمة|المطر.',
+ 'كلمة|الحر.',
+ 'كلمة|الناس الي تبي تنتحر.',
+ 'كلمة|لبنان.',
+ 'كلمة|فلسطين.',
+ 'كلمة|حضارة تحبها.',
+ 'كلمة|صديقك ابو كرشة او الدب.',
+ 'كلمة|صديقك الي جلد على عضم او الي ما ياكل شي بحياتة.',
+ 'كلمة|اونر السيرفر.',
+ 'كلمة|شركة تحبها.',
+ 'كلمة|اكثر يوم تحبه بل اسبوع.',
+ 'كلمة|اكثر يوم ما تحبة بل اسبوع.',
+ 'كلمة|ايش اسوء صفة بافضل صديق عندك .',
+ ]
+client.on('message', message => {
+    if (message.content.startsWith("=كلمة")) {
+        if (!message.channel.guild) return message.reply('** هاذا الأمر فقط للسيرفرات **');
+        var client = new Discord.RichEmbed()
+            .setTitle("كلمة وحدة")
+            .setColor('RANDOM')
+            .setDescription(`${klmh[Math.floor(Math.random() * klmh.length)]}`)
+            .setTimestamp()
+
+        message.channel.sendEmbed(client);
+        message.react("??")
+    }
+});
+
+
+
+
+
+
 client.on('message', message => {
             if (message.content.startsWith(prefix + "=help")) {
      let embed = new Discord.RichEmbed()
