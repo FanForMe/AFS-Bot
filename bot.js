@@ -497,6 +497,20 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
 
 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '472446564745347085').setName("H");
+client.channels.find('id', '472446564745347085').setName("He");
+client.channels.find('id', '472446564745347085').setName("Hel");
+client.channels.find('id', '472446564745347085').setName("Hell");
+client.channels.find('id', '472446564745347085').setName("Hello ");
+  }, 3000);
+});
+
+
+
+
+
 
 var معلش = ["https://cdn.discordapp.com/attachments/406693596293496842/412351951217360906/20883029_498456257153371_5670070990530074729_n.jpg","https://promediaz.com/ar/wp-content/uploads/sites/3/2018/01/592f4b5f594e8.jpg","https://scontent-sea1-1.cdninstagram.com/vp/1f1237dcc43a5d809916f07918bd66db/5B1FD928/t51.2885-15/e35/13696871_1264036036948504_1880787294_n.jpg?ig_cache_key=MTMyNDY4MzY1NjI3NDQ2ODI5OQ%3D%3D.2","http://www.shuuf.com/shof/uploads/2017/08/22/jpg/shof_6252d17093aa558.jpg","https://pbs.twimg.com/media/CsUwM91WEAA9RJV.jpg","https://datastandard.blob.core.windows.net/botimg/5a04cd88b93255412c785489.jpg"]
     client.on('message', message => {
