@@ -388,17 +388,18 @@ const klmh = [
  'كلمة|اكثر يوم ما تحبة بل اسبوع.',
  'كلمة|ايش اسوء صفة بافضل صديق عندك .',
  ]
-client.on('message', message => {
-    if (message.content.startsWith("=كلمة")) {
-        if (!message.channel.guild) return message.reply('** هاذا الأمر فقط للسيرفرات **');
-        var client = new Discord.RichEmbed()
-            .setTitle("كلمة وحدة")
-            .setColor('RANDOM')
-            .setDescription(`${klmh[Math.floor(Math.random() * klmh.length)]}`)
-            .setTimestamp()
 
-        message.channel.sendEmbed(client);
-        message.react("??")
+ client.on('message', message => {
+   if (message.content.startsWith("=كلمة")) {
+                if(!message.channel.guild) return message.reply('** This command only for servers**');
+  var embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+
+   .setThumbnail(message.author.avatarURL)
+ .addField('كلمة وحدة' ,
+  `${klmh[Math.floor(Math.random() * klmh.length)]}`)
+  message.channel.sendEmbed(embed);
+  console.log('[id] Send By: ' + message.author.username)
     }
 });
 
