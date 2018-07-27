@@ -409,7 +409,7 @@ const klmh = [
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   const verifed = ["436535469392527380"];
-if (message.content.startsWith(prefix + '=botowner')) {
+if (message.content.startsWith(prefix + '=ownerbot')) {
     if(!message.channel.guild) return;
 if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage("**انت صاحب البوت **")
 } else {
@@ -420,24 +420,71 @@ if( verifed.some(word => message.author.id.includes(word)) ) {    return message
 
 
 
+
+
 client.on('message', message => {
-            if (message.content.startsWith(prefix + "=help")) {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     **خواطر=** ' ,' **يعطيك كلام موزون وحلو** ')
-.addField('     **صراحة=**  ' ,' **يعطيك سؤال لازم تجاوب عليه بصراحة** ')
-.addField('     **حكم=** ' , '**يعطيك حكم لازم تسوي اذا ما جاوبت على سؤال حق صراحة**') 
-.addField('     **نصيحة=** ' , '**يعطيك نصيحة ممكن تفيدك**') 
-.addField('     **مريم=** ' ,' ** نفس لعبة مريم الي على الجوال بس عل بوت**')
-.addField('     **كت تويت=** ' , '**يعطيك سؤال عن نفسك لكن مباجباري الاجابة**')
-.addField('     **هل تعلم= ** ' ,' **  يعطيك معلومات ممكن ما تعرفها  ** ')
-.addField('     **لو خيروك=** ' , '**يعطيك صورة فيها خيارين اختار واحد من الاختيارات**')
-.addField('     **كلمة=** ' , '**يعطيك شي انت لازم تعبر عنه او تعطي صفة ولكن لازم يكون كلمة وحدة فقط**')
-.addField('     **bot= ** ' ,' **   يعطيك معلومات ممكن ما تعرفهاعن البوت** ')
-.setColor('#7d2dbe')
-  message.channel.sendEmbed(embed);
+    if (message.author.bot) return;
+     if (message.content === prefix + "=help") {
+		 message.channel.send('**The Message Was Sent On Private**');
+            
+	
+		 
+
+
+ message.author.sendMessage(`
+ **
+
+╔[❖════════════❖]╗
+             Prefix = ' * '
+╚[❖════════════❖]╝
+
+╔[❖════════════❖]╗
+            General  Commands
+╚[❖════════════❖]╝
+
+❖ خواطر➾يعطيك كلام موزون وحلو
+
+❖ صراحة➾ يعطيك سؤال لازم تجاوب عليه بصراحة
+
+❖ حكم ➾ يعطيك حكم لازم تسوي اذا ما جاوبت على سؤال حق صراحة
+
+❖ نصيحة ➾ يعطيك نصيحة ممكن تفيدك
+
+❖ مريم➾ نفس لعبة مريم الي على الجوال بس عل بوت
+
+❖ كت تويت ➾ يعطيك سؤال عن نفسك لكن مباجباري الاجابة
+
+❖ هل تعلم ➾ يعطيك معلومات ممكن ما تعرفها
+
+❖ لو خيروك➾ يعطيك صورة فيها خيارين اختار واحد من الاختيارات
+
+❖ كلمة ➾ يعطيك شي انت لازم تعبر عنه او تعطي صفة ولكن لازم يكون كلمة وحدة فقط
+
+❖ bot ➾ help by arabic
+
+❖ *help-en ➾ help by english
+
+❖ *ping ➾ to see ping
+
+❖ bot ➾ يعطيك معلومات ممكن ما تعرفهاعن البوت
+
+❖ ownerbot ➾ يعطيك اذا انت انر البوت او لا
+
+❖ *invite ➾ bot invite link
+
+==================================================================
+
+bot invite link: https://discordapp.com/oauth2/authorize?client_id=469144317844258836&scope=bot&permissions=2146957567
+
+==================================================================
+
+`);
+
     }
 });
+
+
+
 
 
 
