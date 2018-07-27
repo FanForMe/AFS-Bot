@@ -406,6 +406,19 @@ const klmh = [
 
 
 
+client.on('message', message => {
+  if (!message.content.startsWith(prefix)) return;
+  const verifed = ["436535469392527380"];
+if (message.content.startsWith(prefix + '=botowner')) {
+    if(!message.channel.guild) return;
+if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage("**انت صاحب البوت **")
+} else {
+   message.reply("**انت مو صاحب البوت**");   
+}
+}
+});
+
+
 
 client.on('message', message => {
             if (message.content.startsWith(prefix + "=help")) {
@@ -425,6 +438,8 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
+
+
 
 
 
