@@ -413,7 +413,7 @@ const klmh = [
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "=مساعدة") {
+     if (message.content === prefix + "$مساعدة") {
 		 message.channel.send('**The Message Was Sent On Private**');
             
 	
