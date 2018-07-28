@@ -445,13 +445,13 @@ client.on("message", message => {
         }
         if( args[0].toLowerCase() == "all" ){
             message.guild.members.forEach(m=>m.removeRole( role1 ))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من الكل رتبة**');
+            return  message.reply('**:white_check_mark: [ '1role.name+' ] تم سحب من الكل رتبة**');
         } else if( args[0].toLowerCase() == "bots" ){
             message.guild.members.filter(m=>m.user.bot).forEach(m=>m.removeRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البوتات رتبة**');
+            return  message.reply('**:white_check_mark: [ '1role.name+' ] تم سحب من البوتات رتبة**');
         } else if( args[0].toLowerCase() == "humans" ){
             message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.removeRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم سحب من البشريين رتبة**');
+            return  message.reply('**:white_check_mark: [ '1role.name+' ] تم سحب من البشريين رتبة**');
         }  
     } else {
         if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد اعطائها الرتبة**' );
@@ -464,13 +464,13 @@ client.on("message", message => {
         }
         if( args[0].toLowerCase() == "all" ){
             message.guild.members.forEach(m=>m.addRole( role1 ))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء الكل رتبة**');
+            return  message.reply('**:white_check_mark: [ '=role.name+' ] تم اعطاء الكل رتبة**');
         } else if( args[0].toLowerCase() == "bots" ){
             message.guild.members.filter(m=>m.user.bot).forEach(m=>m.addRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البوتات رتبة**');
+            return  message.reply('**:white_check_mark: [ '=role.name+' ] تم اعطاء البوتات رتبة**');
         } else if( args[0].toLowerCase() == "humans" ){
             message.guild.members.filter(m=>!m.user.bot).forEach(m=>m.addRole(role1))
-            return  message.reply('**:white_check_mark: [ '+role1.name+' ] تم اعطاء البشريين رتبة**');
+            return  message.reply('**:white_check_mark: [ '=role.name+' ] تم اعطاء البشريين رتبة**');
         }
     }
 });
