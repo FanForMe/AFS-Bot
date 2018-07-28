@@ -463,30 +463,6 @@ bot invite link: https://discordapp.com/oauth2/authorize?client_id=4691443178442
 
 
 
-client.on("message", (message) => {
-if (message.content.startsWith("=cv")) {
-        let args = message.content.split(" ").slice(1);
-    message.guild.createChannel(args.join(' '), 'voice');
-    message.channel.sendMessage('تـم إنـشاء روم صـوتي')
-    
-}
-});
-
-
-
-
-
-client.on("message", (message) => {
-if (message.content.startsWith("=ct")) {
-        let args = message.content.split(" ").slice(1);
-    message.guild.createChannel(args.join(' '), 'text');
-message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
-
-}
-});
-
-
-
 
 
 
