@@ -406,44 +406,9 @@ const klmh = [
 
 
 
-  var AsciiTable = require('ascii-data-table').default
-client.on('message', message =>{
-
-    if(message.content == "=r"){
-        var 
-        ros=message.guild.roles.size,
-        data = [['Rank', 'RoleName']]
-        for(let i =0;i<ros;i++){
-            if(message.guild.roles.array()[i].id !== message.guild.id){
-         data.push([i,`${message.guild.roles.filter(r => r.position == ros-i).map(r=>r.name)}`])
-        }}
-        let res = AsciiTable.table(data)
-
-        message.channel.send(`**\`\`\`xl\n${res}\`\`\`**`);
-    }
-});
 
 
 
-
-
-
-client.on("message", message => {
- 
-    var args = message.content.split(' ').slice(1);
-    var msg = message.content.toLowerCase();
-    if( !message.guild ) return;
-    if( !msg.startsWith( prefix + '=role' ) ) return;
-    if( msg.toLowerCase().startsWith( prefix + '=role' ) ){
-        if( !args[0] ) return message.reply( '**:x: يرجى وضع الشخص المراد سحب منه الرتبة**' );
-        if( !args[1] ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );
-        var role = msg.split(' ').slice(2).join(" ").toLowerCase();
-        var role1 = message.guild.roles.filter( r=>r.name.toLowerCase().indexOf(role)>-1 ).first();
-        if( !role1 ) return message.reply( '**:x: يرجى وضع الرتبة المراد سحبها من الشخص**' );if( message.mentions.members.first() ){
-            message.mentions.members.first().removeRole( role1 );
-            return message.reply('**:white_check_mark: [ '+role1.name+' ] رتبة [ '+args[0]+' ] تم سحب من **');
-        }
-});
 
 
 
