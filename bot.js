@@ -19,7 +19,7 @@ client.on('message', message => {
     var embed = new Discord.RichEmbed() 
     .setAuthor(message.author.username) 
     .setThumbnail(user.avatarURL)
-    .addField('User Activated', ${user} get rank ${act})
+    .addField('User Activated', ${user} get rank ${Member})
     .addField('By', <@${message.author.id}>)
     .setTimestamp()
     .setFooter("Codescopyright")
