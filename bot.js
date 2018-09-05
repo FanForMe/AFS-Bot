@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 
   client.on('message',async message => {
-  if(message.content.startsWith(prefix + "=info")) {
+  if(message.content.startsWith(prefix + "!#info")) {
     let embed = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.avatarURL)
     .setTitle(`\`${message.guild.name}\``)
