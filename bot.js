@@ -6,29 +6,16 @@ client.on('ready', () => {
 });
 
 
-
-  client.on('guildMemberAdd', member => {
-  member.addRole('name', "• New")
+  client.on('message', message => {
+    if(message.content.includes('discord.gg')){
+                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? 🤔   **');
+        if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+        message.delete()
+    return message.reply(`** No Invite Links :angry: !**`)
+    }
+}
 });
-
-client.on('message', message => {
-  let log = message.guild.channels.find('name', "log") 
-  let act = message.guild.roles.find('name', "• Verified")
-  let user = message.mentions.members.first();
-  if(message.content.startsWith(prefix + "act")){
-    var embed = new Discord.RichEmbed() 
-    .setAuthor(message.author.username) 
-    .setThumbnail(user.avatarURL)
-    .addField('User Activated', ${user} get rank ${Member})
-    .addField('By', <@${message.author.id}>)
-    .setTimestamp()
-    .setFooter("Codescopyright")
-  log.send({embed})
-  message.channel.send({embed})
-  user.addRole(${act})
-  }
-});
-
+  
 
 
 
