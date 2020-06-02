@@ -7,27 +7,28 @@ client.on('ready', () => {
 
 
 
-client.on('message',async msg => {
-  var p = "!";
-  if(msg.content.startsWith(p + "=user")) {
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
-  msg.guild.createChannel(`يتم تحضير الروم :[]` , 'voice').then(time => {
-    time.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-Year = currentTime.getFullYear(),
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-      time.setName(`Members : ◤ → ${client.users.size} ← ◢`);
- },1000);
-  });
-  }
- 
-});
+@bot.command(pass_context=True)
+async def report(ctx, member: discord.Member, *, reason: str):
+  if member == ctx.message.author:
+    await bot.say("????!")
+    return
+  if member.bot == True:
+    await bot.say("????!")
+    return
+  channel = discord.utils.get(ctx.message.server.channels, name="report-log")
+  embed = discord.Embed(title="👌 **New Report**", timestamp=ctx.message.timestamp)
+  embed.add_field(name="**➥ Report Details**", value=f"**➥ By: n{ctx.message.author.mention}n➥ Member Reported: n{member.mention}n➥ Reason: n{reason}**", inline=True)
+  embed.set_footer(text=f"{member}", icon_url=member.avatar_url)
+  embed.set_thumbnail(url=f"https://cdn.discordapp.com/avatars/{member.id}/{member.avatar}.png?size=2048")
+  await bot.send_message(channel, embed=embed)
+
+@report.error
+async def report_error(error, ctx):
+    if isinstance(error, commands.MissingRequiredArgument):
+        msg = "-report @member reason"
+        await bot.send_message(ctx.message.channel, msg)
+    else:
+        raise error
 
 	 
 	  
